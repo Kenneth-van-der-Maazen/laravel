@@ -1,0 +1,209 @@
+.klm-header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.klm-container{
+  /* max-width: 1200px; */
+  max-width: 140vh;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.klm-topbar{
+  height: 80px;
+  /* display: flex; */
+  /* display: inline; */
+  align-items: center;
+}
+
+/* ⬅️ links */
+.klm-brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.klm-logo{
+  width: 271px;
+  height: 76px;
+  background: url("/resources/img/blue-turd.png") no-repeat left center / contain;
+  display: inline-block;
+}
+
+.klm-brand-text{
+  font-size: 18px;
+  display: none;
+}
+
+/* ➡️ rechts */
+.klm-top-actions{
+  margin-left: auto;   /* 🔑 DIT is de truc */
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.klm-link{
+  text-decoration: none;
+  color: #072b45;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.klm-icon-btn{
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  cursor: pointer;
+  color: #072b45;
+}
+
+.klm-nav{
+  border-top: 1px solid #f1f5f9;
+}
+
+.klm-nav .klm-container{
+  height: 54px;
+  gap: 26px;
+}
+
+.klm-nav-link{
+  position: relative;
+  text-decoration: none;
+  color: #072b45;
+  font-weight: 600;
+  padding: 14px 2px;
+}
+
+.klm-nav-link:hover{
+  color: #0b4a78;
+}
+
+.klm-nav-link.is-active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: #0b5ed7; /* blauw underline */
+  border-radius: 2px;
+}
+
+/* Responsive: verberg tekst “Royal Dutch Airlines” op smal */
+@media (max-width: 640px){
+  .klm-brand-text{ display:none; }
+  .klm-container{ padding: 0 12px; }
+  .klm-nav .klm-container{ gap: 14px; overflow-x:auto; }
+}
+
+
+@media (max-width: 640px){
+  .klm-brand-text{
+    display: none;
+  }
+
+  .klm-top-actions{
+    gap: 12px;
+  }
+}
+
+
+
+/* Dropdown wrapper */
+.klm-dropdown{
+  position: relative;
+}
+
+/* Trigger moet als link ogen */
+.klm-dropdown-trigger{
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Caret */
+.klm-caret{
+  margin-left: 8px;
+  font-size: 12px;
+  transform: translateY(-1px);
+}
+
+/* Mega menu panel */
+.klm-mega{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  width: min(1100px, calc(100vw - 40px));
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.10);
+  padding: 22px;
+  z-index: 2000;
+}
+
+/* Make it align like KLM (panel under nav, spanning wide) */
+.klm-nav .klm-container{
+  position: relative;
+}
+.klm-dropdown .klm-mega{
+  left: 0;
+}
+
+/* Open state */
+.klm-dropdown.is-open .klm-mega{
+  display: block;
+}
+
+/* Inner grid */
+.klm-mega-inner{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.klm-mega-title{
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+  margin: 0 0 10px;
+}
+
+.klm-mega-link{
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #072b45;
+  font-weight: 600;
+}
+
+.klm-mega-link:hover{
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .klm-mega{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: 120px;          /* pas aan als jouw header hoger/lager is */
+    width: auto;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  .klm-mega-inner{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
