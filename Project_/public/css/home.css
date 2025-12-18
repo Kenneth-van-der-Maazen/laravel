@@ -1,0 +1,631 @@
+* {
+    
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Geef de hero een vaste hoogte (want img wordt fixed en valt uit de flow) */
+.hero-image__container{
+  position: relative;
+  height: 480px;              /* match met je img height */
+}
+
+/* Overlay container */
+.hero-image__hero-text {
+    position: absolute;
+    right: 20%;
+    bottom: 35%;
+    z-index: 5;
+}
+
+/* De card zelf */
+.hero-text {
+    background: rgba(10, 45, 70, 0.85); /* donkerblauw zoals voorbeeld */
+    color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    max-width: 520px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(2px);
+}
+
+/* Titel */
+.hero-text__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+/* Subtitel */
+.hero-text__subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.95;
+    margin-bottom: 1.25rem;
+}
+
+/* CTA link */
+.hero-cta__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.hero-cta__link:hover {
+    text-decoration: underline;
+}
+
+/* Chevron */
+.hero-cta__link .chevron {
+    font-size: 1.2rem;
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .hero-image__hero-text {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1.5rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+a {
+    /* color: #0077cd; */
+    /* color: var(--aero-color-text-link-default); */
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+/* Layout shell */
+/* .hp { color:#102a43; } */
+.hp {
+  position: relative;
+
+  border-bottom: 8px solid orange;
+
+  background-image: url('/resources/images/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hp-shell { width:min(1160px, 92vw); margin:0 auto; }
+
+/* Header */
+.hp-header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(255,255,255,.86);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.hp-header .hp-shell{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.hp-brand{ font-weight:900; letter-spacing:.5px; text-decoration:none; color:#0a5bb5; }
+.hp-nav{ display:flex; gap:18px; }
+.hp-nav__link{ text-decoration:none; color:#17324d; font-weight:700; opacity:.9; }
+.hp-nav__link.is-active{ color:#0a5bb5; }
+.hp-actions{ display:flex; gap:10px; }
+.hp-ghost{
+  height:38px; padding:0 12px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.12); background:#fff; cursor:pointer; font-weight:700;
+}
+
+/* Hero */
+.hp-hero{ position:relative; padding:40px 0 54px; }
+
+.hp-hero__inner{
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+
+.hp-h1{ font-size: clamp(2rem, 3vw, 3.1rem); margin:8px 0 10px; letter-spacing:-.02em; }
+.hp-sub{ font-size:1.05rem; opacity:.85; max-width: 46ch; }
+
+.bw{
+  width: 100%;
+  max-width: 980px;
+}
+
+.bw-tab{
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff; height:38px; padding:0 12px;
+
+}
+
+
+.bw__card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:18px;
+  box-shadow:0 18px 48px rgba(0,0,0,.12);
+  padding:16px;
+}
+
+.bw__row{ display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap; }
+.bw__row--top{ margin-bottom:12px; }
+.bw__row--bottom{ margin-top:12px; justify-content:space-between; align-items:center; }
+
+.bw-field{ min-width: 180px; flex: 1; }
+.bwc-form-field-label{ display:block; font-size:.85rem; font-weight:800; color:#415a77; margin:0 0 6px 2px; }
+
+.bwc-select-wrapper{ position:relative; }
+.bwc-select{
+  width:100%; height:44px; padding:0 40px 0 14px;
+  border-radius:12px; border:1px solid rgba(0,0,0,.12);
+  background:#fff; font-weight:800; cursor:pointer; appearance:none;
+}
+.bwc-select-wrapper::after{
+  content:"▾"; position:absolute; right:14px; top:50%;
+  transform:translateY(-50%); pointer-events:none; opacity:.75;
+}
+
+.bwc-input-wrapper{ position:relative; }
+.bwc-input{
+  width:100%; height:44px; padding:0 14px;
+  border-radius:12px; border:1px solid rgba(0,0,0,.12);
+  background:#fff; font-weight:650;
+}
+.bwc-input:focus, .bwc-select:focus{
+  outline:none; border-color:#0a5bb5; box-shadow:0 0 0 2px rgba(10,91,181,.15);
+}
+
+/* flights grid */
+.bw-search-widget__flights{
+  display:grid;
+  grid-template-columns: 1fr 44px 1fr 1fr 1fr;
+  gap:12px;
+  align-items:end;
+}
+.bw-swap{
+  height:44px; width:44px;
+  border-radius:12px; border:1px solid rgba(0,0,0,.12);
+  background:#fff; cursor:pointer; font-size:18px; font-weight:900;
+}
+.bw-swap:hover{ transform:translateY(-1px); }
+
+/* multi */
+.bw-multi{ margin-top:6px; }
+.bw-multi__row{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+.bw-multi__divider{ height:1px; background:rgba(0,0,0,.08); margin:10px 0; }
+
+.bw-check{ display:flex; gap:10px; align-items:center; font-weight:800; color:#17324d; }
+.bw-check input{ width:18px; height:18px; }
+
+.bw-cta{
+  height:46px; padding:0 16px;
+  border-radius:14px; border:0;
+  background:#0a5bb5; color:#fff; font-weight:900;
+  cursor:pointer; box-shadow:0 16px 38px rgba(10,91,181,.24);
+}
+.bw-cta:hover{ transform:translateY(-1px); }
+
+/* Blocks */
+.hp-block{ padding:28px 0; }
+.hp-block--promo{ padding-top:18px; }
+.hp-promo{
+  display:flex; justify-content:space-between; gap:14px; align-items:center;
+  background: linear-gradient(135deg, rgba(10,91,181,.10), rgba(0,180,216,.08));
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:18px; padding:18px;
+}
+.hp-linkbtn{
+  text-decoration:none; font-weight:900;
+  padding:10px 12px; border-radius:12px;
+  border:1px solid rgba(0,0,0,.12); background:#fff; color:#17324d;
+}
+
+/* Deals */
+.hp-sectionhead{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap; }
+.hp-tabs{ display:flex; gap:8px; }
+.hp-tab{
+  height:38px; padding:0 12px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.12); background:#fff; font-weight:900; cursor:pointer;
+}
+.hp-tab.is-active{ background:#102a43; border-color:#102a43; color:#fff; }
+
+.hp-dealsgrid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:12px;
+}
+.hp-dealcard{
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:16px;
+  padding:14px;
+  background:#fff;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+.hp-dealcard__top{ display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+.hp-muted{ margin:2px 0 0; opacity:.7; }
+.hp-pill{
+  font-size:.78rem; font-weight:900;
+  padding:6px 10px; border-radius:999px;
+  background:rgba(10,91,181,.10); color:#0a5bb5;
+}
+.hp-dealcard__meta{ display:flex; justify-content:space-between; margin-top:12px; }
+.hp-dealcard__link{ display:inline-block; margin-top:10px; text-decoration:none; font-weight:900; color:#0a5bb5; }
+
+/* Footer */
+.hp-footer{ padding-top:10px; }
+.hp-footergrid{
+  display:grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:18px;
+  border-top:1px solid rgba(0,0,0,.08);
+  padding-top:22px;
+}
+.hp-footergrid h4{ margin:0 0 10px; }
+.hp-footergrid a{ display:block; color:#17324d; text-decoration:none; margin:8px 0; opacity:.85; }
+.hp-footnote{ margin-top:18px; padding:16px 0 26px; opacity:.7; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .hp-hero__inner{ grid-template-columns: 1fr; }
+  .bw-search-widget__flights{ grid-template-columns: 1fr 44px 1fr; }
+  .bw-search-widget__flights [data-return]{ grid-column: 1 / -1; }
+  .hp-dealsgrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hp-footergrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .bw-search-widget__flights{ grid-template-columns: 1fr; }
+  .bw-swap{ width:100%; }
+  .hp-dealsgrid{ grid-template-columns: 1fr; }
+}
+
+
+.bwhp-hero-text {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    background: #072b45;
+}
+
+.bwhp-hero-text__white-text {
+    color: #ffffff;
+}
+
+.bwhp-hero-text__price-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bwhp-hero-cta__link {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: var(--bwc-palette-white);
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration: none;
+    gap: 8px;
+}
+
+@media (min-width: 1280px) {
+    .bwhp-hero-image__hero-text {
+        right: calc((100% - 960px) / 2);
+        bottom: 108px;
+    }
+}
+
+@media (min-width: 960px) {
+    .bwhp-hero-image__hero-text {
+        position: absolute;
+        top: auto;
+        right: calc((100% - 912px) / 2);
+        bottom: 24px;
+        width: 472px;
+        margin: 0;
+        padding: 0;
+    }
+    .bwhp-hero-text {
+        background: rgb(from var(--bwc-palette-primary-900) r g b / .8);
+    }
+}
+
+@media (min-width: 600px) {
+    .bwhp-hero-image__hero-text {
+        padding: 0 24px;
+    }
+    .bwhp-hero-text {
+        padding: 20px 24px;
+    }
+    .bwhp-hero-text__title {
+        margin-bottom: 8px;
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .bwhp-hero-text__subtitle {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+
+
+
+
+/* HERO zoals screenshot: foto + voldoende hoogte */
+.hp {
+  position: relative;
+  background-image: url('/resources/images/header-index-img-1.png'); /* jouw image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hp-hero{
+  position: relative;
+  min-height: 520px; /* bepaalt hoe “hoog” je hero is */
+  padding: 28px 0 0;
+}
+
+/* container */
+.hp-shell { width:min(1160px, 92vw); margin:0 auto; }
+
+/* hero-inner als “positioning context” */
+.hp-hero__inner{
+  position: relative;
+  z-index: 1;
+  padding-top: 18px;
+}
+
+/* blauwe tekst-card rechts zoals screenshot */
+.bwhp-hero-image__hero-text{
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: min(520px, 92vw);
+}
+
+.bwhp-hero-text{
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: rgba(7, 43, 69, .86);
+  backdrop-filter: blur(6px);
+}
+
+/* Booking widget overlapt hero (zoals screenshot) */
+.bw{
+  width: 100%;
+  max-width: 1120px;
+  margin-top: 50px;           /* duwt de form naar beneden in hero */
+  position: relative;
+  z-index: 3;
+}
+
+/* Tabs zoals screenshot: kleine “bar” boven card */
+.bw__tabs{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  background: #fff;
+  /* border: 1px solid rgba(0,0,0,.12); */
+  border-radius: 6px;
+  /* box-shadow: 0 8px 22px rgba(0,0,0,.12); */
+  /* margin-left: 12px;           beetje inset */
+  margin-bottom: 10px;
+}
+
+.bw-tab{
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+  color: #0b2b45;
+}
+
+/* .bw-tab.is-active{
+  border-color: rgba(0,0,0,.12);
+  background: #f5f7fa;
+} */
+
+/* Witte card */
+.bw__card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius: 6px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  padding: 26px 26px 22px;
+}
+
+/* Grid zoals screenshot: 3 kolommen */
+.bw__grid{
+  display:grid;
+  grid-template-columns: 220px 1fr 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.bw__grid--top{ margin-bottom: 25px; }
+
+
+
+.bw__grid--mid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+/* Inputs zoals screenshot: vierkantiger */
+.bwc-input, .bwc-select{
+  height: 52px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.28);
+  font-weight: 600;
+}
+
+.bwc-input::placeholder{ color: rgba(0,0,0,.60); }
+
+/* “Travel dates” blok zoals screenshot */
+.bw-dates{
+  height: 52px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.28);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bw-dates__btn{
+  height: 52px;
+  flex: 1;
+  border: 0;
+  background: #fff;
+  padding: 0 14px;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bw-dates__chev{ margin-left: 6px; font-weight: 900; }
+
+.bw-dates__clear{
+  width: 56px;
+  height: 52px;
+  border: 0;
+  border-left: 1px solid rgba(0,0,0,.18);
+  background: #eef1f4;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.bw-dates__hidden{
+  position: absolute;
+  left: -9999px;
+}
+
+/* Button rechtsonder */
+.bw__actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 18px;
+}
+
+.bw-cta{
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 4px;
+  border: 0;
+  background: #0a5bb5;
+  color:#fff;
+  font-weight: 800;
+  cursor:pointer;
+}
+
+/* simple error styling (zoals rood in screenshot) */
+.bw-error{
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #c1121f;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+    .bw__grid--mid{
+        grid-template-columns: 1fr;
+    }
+    .bw__grid--top .bw-field{
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 980px){
+  .bwhp-hero-image__hero-text{
+    position: static;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .bw{ margin-top: 18px; }
+  .bw__grid{ grid-template-columns: 1fr; }
+  .bw__tabs{ margin-left: 0; }
+}
+
+
+.bwc-input.is-error {
+  border-color: #d90429;
+}
+
+.bw-error {
+  color: #d90429;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+
+.bw-dates{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.bw-dates__inputs{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* > teken tussen de twee date inputs */
+.bw-dates__inputs::after{
+  content: "›";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  color: rgba(0,0,0,.55);
+  pointer-events: none;
+}
+
+
+.bw-dates__clear{
+  width:52px;
+  height:52px;
+  border:1px solid rgba(0,0,0,.18);
+  background:#eef1f4;
+  border-radius:4px;
+  font-size:20px;
+  cursor:pointer;
+}

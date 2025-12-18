@@ -32,7 +32,7 @@
 .klm-logo{
   width: 271px;
   height: 76px;
-  background: url("/resources/img/blue-turd.png") no-repeat left center / contain;
+  background: url("/resources/img/het-goede-leven.png") no-repeat left center / contain;
   display: inline-block;
 }
 
@@ -44,16 +44,31 @@
 /* ➡️ rechts */
 .klm-top-actions{
   margin-left: auto;   /* 🔑 DIT is de truc */
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .klm-link{
-  text-decoration: none;
+  display: inline-flex;        /* ⬅️ dit is de sleutel */
+  align-items: center;
+  gap: 6px;                    /* ruimte tussen icoon en tekst */
   color: #072b45;
   font-weight: 600;
-  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* SVG login-icoon netjes schalen */
+.klm-link svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Hover zoals KLM */
+.klm-link:hover{
+  text-decoration: underline;
 }
 
 .klm-icon-btn{
@@ -65,7 +80,7 @@
 }
 
 .klm-nav{
-  border-top: 1px solid #f1f5f9;
+  /* border-top: 1px solid #f1f5f9; */
 }
 
 .klm-nav .klm-container{
